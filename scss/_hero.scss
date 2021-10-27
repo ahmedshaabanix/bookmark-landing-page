@@ -1,0 +1,50 @@
+.hero {
+  position: relative;
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 28rem;
+    transform: translateY(-10%);
+    height: 17rem;
+    background-color: #5368df;
+    z-index: -1;
+    border-radius: 50% 0 0 50%;
+    @include breakpoint-down(small) {
+      top: 10%;
+      width: 22rem;
+      height: 15rem;
+    }
+  }
+  margin: 3.125rem auto;
+  .flex {
+    @include breakpoint-down(small) {
+      flex-direction: column-reverse;
+      text-align: center;
+    }
+    & > div {
+      flex: 1;
+    }
+  }
+  &__content {
+    h1 {
+      font-size: 3.125rem;
+      @include breakpoint-down(small) {
+        font-size: 2.125rem;
+      }
+    }
+    p {
+      line-height: 1.4;
+      font-size: 20px;
+      color: $GrayishBlue;
+      margin-bottom: 2.1875rem;
+    }
+  }
+  &__img {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}

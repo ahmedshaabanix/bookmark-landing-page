@@ -1,0 +1,155 @@
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+  transition: all 0.2s ease-in-out;
+}
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  font-family: "Rubik", sans-serif;
+}
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 500;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-weight: 400;
+}
+
+/* Start Container */
+.container {
+  padding: 0 20px;
+  margin: 0 auto;
+}
+/* Small */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+/* Medium */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+/* Large */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+/* End Container*/
+
+img {
+  max-width: 100%;
+}
+ul {
+  list-style: none;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+  white-space: nowrap;
+}
+input {
+  border: none;
+  border-radius: 2px;
+  font-size: 14px;
+  padding: 10px;
+  caret-color: auto;
+  outline: none;
+
+  @include breakpoint-down(small) {
+    width: 100%;
+    border-radius: 30px;
+    margin-bottom: 15px;
+  }
+}
+.flex {
+  display: flex;
+}
+.center {
+  justify-content: center;
+  align-items: center;
+}
+.btn {
+  padding: 0.625rem 0.9375rem;
+  border-radius: 5px;
+}
+.btn-contact {
+  cursor: pointer;
+  background-color: $SoftRed;
+  color: #fff;
+  font-weight: 500;
+  margin-right: 1rem;
+  border: 1px solid $SoftRed;
+  @include breakpoint-down(small) {
+    width: 100%;
+  }
+  &:hover {
+    background-color: white;
+    color: $SoftRed;
+  }
+}
+
+.btn-primary {
+  background-color: $SoftBlue;
+  color: #fff;
+  font-weight: 500;
+  margin-right: 1rem;
+  border: 1px solid $SoftBlue;
+  &:hover {
+    background-color: white;
+    color: $SoftBlue;
+  }
+}
+
+.btn-secondary {
+  background-color: #ebebee70;
+  color: $VeryDarkBlue;
+  font-weight: 500;
+  border: 1px solid #ebebee70;
+  &:hover {
+    background-color: white;
+    color: #000;
+    border-color: #000;
+  }
+}
+
+// main head
+.main-heading {
+  text-align: center;
+  padding: 1.875rem 0;
+
+  h2 {
+    font-size: 1.875rem;
+  }
+  p {
+    width: 45%;
+    line-height: 1.8;
+    margin: 1.25rem auto;
+    margin-bottom: 3.125rem;
+    color: $GrayishBlue;
+    @include breakpoint-down(medium) {
+      width: 80%;
+    }
+  }
+}
+// Hide and show helper classes
+.hide-for-mobile {
+  @include breakpoint-down(medium) {
+    display: none;
+  }
+}
+.hide-for-desktop {
+  @include breakpoint-up(large) {
+    display: none;
+  }
+}
